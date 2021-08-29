@@ -1,4 +1,5 @@
 {
+  "plugins": ["@nuxtjs/composition-api/dist/babel-plugin"],
   "env": {
     "test": {
       "presets": [

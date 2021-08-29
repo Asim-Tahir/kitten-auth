@@ -1,0 +1,13 @@
+{
+  "recommendations": [
+    "johnsoncodehk.volar",
+    "arcanis.vscode-zipfs",
+    "dbaeumer.vscode-eslint",
+    "stylelint.vscode-stylelint",
+    "esbenp.prettier-vscode",
+    "mrmlnc.vscode-json5",
+    "cpylua.language-postcss",
+    "csstools.postcss",
+    "bradlc.vscode-tailwindcss"
+  ]
+}
