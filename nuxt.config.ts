@@ -52,6 +52,9 @@ export default {
     // https://image.nuxtjs.org
     "@nuxt/image",
 
+    // https://pinia.esm.dev/ssr/nuxt.html
+    "@pinia/nuxt",
+
     // https://github.com/antfu/unplugin-vue2-script-setup
     ["unplugin-vue2-script-setup/nuxt", { refTransform: true }],
 
@@ -134,17 +137,14 @@ export default {
     useStylesheet: false,
   },
 
-  // image: {
-  //   providers: {
-  //     customProvider: {
-  //       name: 'customProvider', // optional value to overrider provider name
-  //       provider: '~/providers/custom', // Path to custom provider
-  //       options: {
-  //         // ... provider options
-  //       }
-  //     }
-  //   }
-  // },
+  image: {
+    // Generate images to `/_nuxt/image/file.png`
+    staticFilename: "[publicPath]/images/[name]-[hash][ext]",
+    dir: "assets/images",
+    imgix: {
+      baseURL: "https://assets.imgix.net",
+    },
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {

@@ -8,11 +8,13 @@
   "extends": [
     "@nuxtjs/eslint-config-typescript",
     "plugin:nuxt/recommended",
-    "prettier",
+    "plugin:jest/recommended",
+    "plugin:jest/style",
     "plugin:jest-dom/recommended",
-    "plugin:testing-library/vue"
+    "plugin:testing-library/vue",
+    "prettier"
   ],
-  "plugins": ["jest-dom", "testing-library"],
+  "plugins": ["jest", "jest-dom", "testing-library"],
   // add your custom rules here
   "rules": {
     "no-console": ["warn"],

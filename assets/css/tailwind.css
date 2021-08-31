@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind utilities;
+@tailwind variants;
+@tailwind components;
+
+@layer base {
+  a {
+    @apply underline text-gray-700;
+  }
+  h1 {
+    @apply text-4xl font-bold flex;
+  }
+  h2 {
+    @apply text-3xl font-bold flex;
+  }
+  h3 {
+    @apply text-2xl font-bold flex;
+  }
+
+  form {
+    @apply w-[500px] h-auto mx-auto p-8;
+    @apply absolute top-20 left-1/2 transform -translate-x-1/2;
+    @apply flex flex-col space-y-6 justify-center items-center;
+    @apply text-black;
+    @apply bg-white bg-opacity-90 backdrop-filter backdrop-blur-sm shadow-xl;
+    @apply rounded-xl;
+  }
+
+  input[type="text"],
+  input[type="password"],
+  input[type="email"],
+  input[type="number"],
+  input[type="date"],
+  input[type="time"],
+  input[type="datetime-local"],
+  input[type="month"],
+  input[type="week"],
+  input[type="file"],
+  input[type="url"],
+  input[type="search"],
+  input[type="tel"],
+  input[type="color"],
+  textarea {
+    @apply px-4 py-2 rounded-md shadow w-full;
+    @apply focus:outline-none focus:ring focus:border-yellow-700;
+  }
+
+  input[type="submit"],
+  input[type="reset"],
+  input[type="button"],
+  button,
+  .accept-button {
+    @apply bg-gradient-to-r from-red-400 to-yellow-500;
+    @apply px-4 py-2 w-full;
+    @apply text-gray-50 font-semibold tracking-wider;
+    @apply rounded-md shadow-lg;
+    @apply transition-all ease-in duration-100 cursor-pointer;
+    @apply active:transform active:translate-y-1;
+    @apply active:scale-[97%] active:shadow-md;
+  }
+}
+
+@layer components {
+  .accept-button {
+    @apply text-center;
+    @apply no-underline;
+  }
+
+  .disclaimer-layout {
+    @apply container h-full mx-auto my-8 px-12 py-8 rounded-md;
+    @apply flex flex-col space-y-8;
+    @apply bg-white;
+  }
+
+  .authentication-layout {
+    @apply w-full max-h-screen h-screen relative;
+    @apply bg-gradient-to-br from-red-400 to-yellow-600;
+    @apply bg-no-repeat bg-cover bg-center;
+  }
+}

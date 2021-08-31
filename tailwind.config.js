@@ -4,21 +4,13 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        purple: "#8C00B8",
-        "navy-blue": "#1D0CFF",
-        violet: "#5406DB",
-        // primary: {
-        //   lighter: "#6459FF",
-        //   DEFAULT: "#1d0cff",
-        //   dark: "#4208e7",
-        // },
-        // secondary: {
-        //   lighter: "#8B45D7",
-        //   light: "#9e0feb",
-        //   DEFAULT: "#6704cf",
-        //   dark: "#33194F",
-        // },
-        white: "#fcfcfc",
+        copper: "#B36D30",
+        "totem-pole": "#982B07",
+        cameo: "#CA9D79",
+        "golden-sand": "#F4CD84",
+        rebel: "#370B06",
+        silk: "#C2A8A8",
+        white: "#f7f7f7",
         black: "#1D1D1B",
       },
       screens: {
@@ -29,4 +21,5 @@ module.exports = {
       sans: ["Raleway", "system-ui", "sans-serif"],
     },
   },
+  plugins: [require("@tailwindcss/typography")()],
 };
