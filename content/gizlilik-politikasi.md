@@ -32,10 +32,10 @@ KVKK madde 11 uyarınca herkes, veri sorumlusuna başvurarak aşağıdaki haklar
 8.  İşlenen verilerin münhasıran otomatik sistemler vasıtasıyla analiz edilmesi suretiyle kişinin kendisi aleyhine bir sonucun ortaya çıkmasına itiraz etme,
 9.  Kişisel verilerin kanuna aykırı olarak işlenmesi sebebiyle zarara uğraması hâlinde zararın giderilmesini talep etme, haklarına sahiptir.
 
-Yukarıda sayılan haklarınızı kullanmak üzere [info@kittenauth.com](mailto:info@kittenauth.com) üzerinden bizimle iletişime geçebilirsiniz.
+Yukarıda sayılan haklarınızı kullanmak üzere [info@kittini.com](mailto:info@kittini.com) üzerinden bizimle iletişime geçebilirsiniz.
 
 ## İletişim
 
-Sizlere hizmet sunabilmek amaçlı analizler yapabilmek için, sadece gerekli olan kişisel verilerinizin, işbu gizlilik ve kişisel verilerin işlenmesi politikası uyarınca işlenmesini, kabul edip etmemek hususunda tamamen özgürsünüz. Siteyi kullanmaya devam ettiğiniz takdirde kabul etmiş olduğunuz tarafımızca varsayılacak olup, daha ayrıntılı bilgi için bizimle [info@kittenauth.com](mailto:info@kittenauth.com) e-posta adresi üzerinden iletişime geçmekten lütfen çekinmeyiniz.
+Sizlere hizmet sunabilmek amaçlı analizler yapabilmek için, sadece gerekli olan kişisel verilerinizin, işbu gizlilik ve kişisel verilerin işlenmesi politikası uyarınca işlenmesini, kabul edip etmemek hususunda tamamen özgürsünüz. Siteyi kullanmaya devam ettiğiniz takdirde kabul etmiş olduğunuz tarafımızca varsayılacak olup, daha ayrıntılı bilgi için bizimle [info@kittini.com](mailto:info@kittini.com) e-posta adresi üzerinden iletişime geçmekten lütfen çekinmeyiniz.
 
 _Bu gizlilik politikası, [https://sartlar.com](https://sartlar.com) aracılığıyla oluşturulmuştur._

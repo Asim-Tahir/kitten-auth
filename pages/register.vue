@@ -39,10 +39,13 @@
 <template>
   <main class="authentication-layout">
     <form @submit.prevent="register(userInput)">
+      <nuxt-link to="/">
+        <h1 class="font-brand">kittini</h1>
+      </nuxt-link>
       <h3>Kayıt Ol</h3>
       <p>
         Zaten bir hesabın var mı?
-        <nuxt-link to="/login">Oturum aç</nuxt-link>
+        <nuxt-link to="/login" class="link">Oturum aç</nuxt-link>
       </p>
       <input
         v-model="userInput.name"
@@ -66,36 +69,16 @@
         name="password"
       />
 
-      <svg class="checkbox-symbol">
-        <symbol id="check" viewbox="0 0 12 10">
-          <polyline
-            points="1.5 6 4.5 9 10.5 1"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-          ></polyline>
-        </symbol>
-      </svg>
-
-      <input
-        id="kullanim-kosullari"
-        class="checkbox-input"
-        name="isTermOfUseAccept"
-        required
-        type="checkbox"
-      />
-      <label class="checkbox" for="kullanim-kosullari">
-        <span>
-          <svg width="12px" height="10px">
-            <use xlink:href="#check"></use>
-          </svg>
-        </span>
-        <span>
-          <nuxt-link to="/disclaimer/kullanim-kosullari">
-            Kullanım koşullarını
-          </nuxt-link>
-          okudum ve kabul ediyorum.
-        </span>
+      <label for="kullanim-kosullari" class="select-none cursor-pointer">
+        <input id="kullanim-kosullari" type="checkbox" required />
+        <nuxt-link to="/disclaimer/kullanim-kosullari" class="link">
+          Kullanım koşullarını
+        </nuxt-link>
+        <span>ve</span>
+        <nuxt-link to="/disclaimer/gizlilik-politikasi" class="link">
+          gizlilik politikasını
+        </nuxt-link>
+        okudum ve kabul ediyorum.
       </label>
 
       <input type="submit" value="Kayıt ol" />
@@ -104,91 +87,147 @@
 </template>
 
 <style lang="postcss" scoped>
-  main {
-    background-image: url(http://localhost:3000/_ipx/authentication/kitten-register.jpg?w=1080&fit=cover);
-  }
-
-  .checkbox-symbol {
-    position: absolute;
-    width: 0;
-    height: 0;
-    pointer-events: none;
-    user-select: none;
-  }
-
-  .checkbox-input {
-    position: absolute;
-    visibility: hidden;
-  }
-
-  .checkbox {
-    user-select: none;
-    cursor: pointer;
-    padding: 6px 8px;
-    border-radius: 6px;
-    overflow: hidden;
-    transition: all 0.3s ease;
-    display: flex;
-  }
-
-  .checkbox:not(:last-child) {
-    margin-right: 6px;
-  }
-
-  .checkbox:hover {
-    background: rgba(0, 119, 255, 0.06);
-  }
-
-  .checkbox span {
-    vertical-align: middle;
-    transform: translate3d(0, 0, 0);
-  }
-
-  .checkbox span:first-child {
+  /* stylelint-disable */
+  input[type="checkbox"],
+  input[type="radio"] {
+    --active: #275efe;
+    --active-inner: #fff;
+    --focus: 2px rgba(39, 94, 254, 0.3);
+    --border: #bbc1e1;
+    --border-hover: #275efe;
+    --background: #fff;
+    --disabled: #f6f8ff;
+    /* --disabled-inner: #e1e6f9;
+    --active: #275efe;
+    --active-inner: #fff;
+    --focus: 2px rgba(39, 94, 254, 0.3);
+    --border: #bbc1e1;
+    --border-hover: #275efe;
+    --background: #fff;
+    --disabled: #f6f8ff;
+    --disabled-inner: #e1e6f9; */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    height: 21px;
+    outline: none;
+    display: inline-block;
+    vertical-align: top;
     position: relative;
-    flex: 0 0 18px;
-    width: 18px;
-    height: 18px;
-    border-radius: 4px;
-    transform: scale(1);
-    border: 2px solid #b1b3bd;
-    transition: all 0.3s ease;
+    margin: 0;
+    cursor: pointer;
+    border: 1px solid var(--bc, var(--border));
+    background: var(--b, var(--background));
+    transition: background 0.3s, border-color 0.3s, box-shadow 0.2s;
+    &:after {
+      content: "";
+      display: block;
+      left: 0;
+      top: 0;
+      position: absolute;
+      transition: transform var(--d-t, 0.3s) var(--d-t-e, ease),
+        opacity var(--d-o, 0.2s);
+    }
+    &:checked {
+      --b: var(--active);
+      --bc: var(--active);
+      --d-o: 0.3s;
+      --d-t: 0.6s;
+      --d-t-e: cubic-bezier(0.2, 0.85, 0.32, 1.2);
+    }
+    &:disabled {
+      --b: var(--disabled);
+      cursor: not-allowed;
+      opacity: 0.9;
+      &:checked {
+        --b: var(--disabled-inner);
+        --bc: var(--border);
+      }
+      & + label {
+        cursor: not-allowed;
+      }
+    }
+    &:hover {
+      &:not(:checked) {
+        &:not(:disabled) {
+          --bc: var(--border-hover);
+        }
+      }
+    }
+    &:focus {
+      box-shadow: 0 0 0 var(--focus);
+    }
+    &:not(.switch) {
+      width: 21px;
+      &:after {
+        opacity: var(--o, 0);
+      }
+      &:checked {
+        --o: 1;
+      }
+    }
+    & + label {
+      font-size: 14px;
+      line-height: 21px;
+      display: inline-block;
+      vertical-align: top;
+      cursor: pointer;
+      margin-left: 4px;
+    }
   }
-
-  .checkbox span:first-child svg {
-    position: absolute;
-    top: 3px;
-    left: 2px;
-    fill: none;
-    stroke: #fff;
-    stroke-dasharray: 16px;
-    stroke-dashoffset: 16px;
-    transition: all 0.3s ease;
-    transform: translate3d(0, 0, 0);
+  input[type="checkbox"] {
+    &:not(.switch) {
+      border-radius: 7px;
+      &:after {
+        width: 5px;
+        height: 9px;
+        border: 2px solid var(--active-inner);
+        border-top: 0;
+        border-left: 0;
+        left: 7px;
+        top: 4px;
+        transform: rotate(var(--r, 20deg));
+      }
+      &:checked {
+        --r: 43deg;
+      }
+    }
+    &.switch {
+      width: 38px;
+      border-radius: 11px;
+      &:after {
+        left: 2px;
+        top: 2px;
+        border-radius: 50%;
+        width: 15px;
+        height: 15px;
+        background: var(--ab, var(--border));
+        transform: translateX(var(--x, 0));
+      }
+      &:checked {
+        --ab: var(--active-inner);
+        --x: 17px;
+      }
+      &:disabled {
+        &:not(:checked) {
+          &:after {
+            opacity: 0.6;
+          }
+        }
+      }
+    }
   }
-
-  .checkbox span:last-child {
-    padding-left: 8px;
-    line-height: 18px;
-  }
-
-  .checkbox:hover span:first-child {
-    border-color: #0077ff;
-  }
-
-  .checkbox-input:checked + .checkbox span:first-child {
-    background: #0077ff;
-    border-color: #0077ff;
-    animation: zoom-in-out 0.3s ease;
-  }
-
-  .checkbox-input:checked + .checkbox span:first-child svg {
-    stroke-dashoffset: 0;
-  }
-
-  @keyframes zoom-in-out {
-    50% {
-      transform: scale(0.9);
+  input[type="radio"] {
+    border-radius: 50%;
+    &:after {
+      width: 19px;
+      height: 19px;
+      border-radius: 50%;
+      background: var(--active-inner);
+      opacity: 0;
+      transform: scale(var(--s, 0.7));
+    }
+    &:checked {
+      --s: 0.5;
     }
   }
 </style>

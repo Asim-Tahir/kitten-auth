@@ -33,6 +33,6 @@ Web sitemizde, şüpheli eylemlerin tespiti yoluyla güvenliğin sağlanması, k
 
 ## Çerezler Nasıl Yönetilmektedir?
 
-Tüm bu açıklamalardan sonra, hangi çerezlerin kullanılacağı konusu, tamamen kullanıcılarımızın özgür iradelerine bırakılmıştır. Çerez tercihlerinizi, tarayıcınızın ayarlarından silerek ya da engelleyerek, web sitemize adım attığınız anda yönetebilir ya da gelecekte, istediğiniz zaman bu ayarları değiştirebilirsiniz. Daha ayrıntılı bilgi için Gizlilik Politikamıza göz atabilir ya da bizlerle [info@kittenauth.com](mailto:info@kittenauth.com) e-mail adresi üzerinden iletişime geçebilirsiniz.
+Tüm bu açıklamalardan sonra, hangi çerezlerin kullanılacağı konusu, tamamen kullanıcılarımızın özgür iradelerine bırakılmıştır. Çerez tercihlerinizi, tarayıcınızın ayarlarından silerek ya da engelleyerek, web sitemize adım attığınız anda yönetebilir ya da gelecekte, istediğiniz zaman bu ayarları değiştirebilirsiniz. Daha ayrıntılı bilgi için Gizlilik Politikamıza göz atabilir ya da bizlerle [info@kittini.com](mailto:info@kittini.com) e-mail adresi üzerinden iletişime geçebilirsiniz.
 
 Bu çerez politikası, https://sartlar.com aracılığıyla oluşturulmuştur.

@@ -2,7 +2,7 @@
 
 Son güncellenme: `31/08/2021`
 
-Sevgili ziyaretçimiz, lütfen [https://kittenauth.com](https://kittenauth.com)
+Sevgili ziyaretçimiz, lütfen [https://kittini.com](https://kittini.com)
 web sitemizi ziyaret etmeden önce işbu kullanım koşulları sözleşmesini dikkatlice
 okuyunuz. Siteye erişiminiz tamamen bu sözleşmeyi kabulünüze ve bu
 sözleşme ile belirlenen şartlara uymanıza bağlıdır. Şayet bu sözleşmede
@@ -11,7 +11,7 @@ sonlandırınız. Siteye erişiminizi sürdürdüğünüz takdirde, koşulsuz ve
 kısıtlamasız olarak, işbu sözleşme metninin tamamını kabul ettiğinizin,
 tarafımızca varsayılacağını lütfen unutmayınız.
 
-[https://kittenauth.com](https://kittenauth.com) web sitesi
+[https://kittini.com](https://kittini.com) web sitesi
 Kitten Authentication tarafından yönetilmekte olup, bundan sonra **SİTE** olarak
 anılacaktır. İşbu siteye ilişkin Kullanım Koşulları, yayınlanmakla
 yürürlüğe girer. Değişiklik yapma hakkı, tek taraflı olarak **SİTE**'ye aittir

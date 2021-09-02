@@ -1,43 +1,21 @@
-// eslint-disable-next-line import/named
-import { defineStore, StateTree, GettersTree, ActionsTree } from "pinia";
+import { defineStore } from "pinia";
 import ms from "ms";
 
 import { setCookie, removeCookie, getUserFromCookie } from "@/helpers";
-import { IUser } from "@/types";
-
-export interface AuthenticationStoreState extends StateTree {
-  users: Array<IUser>;
-}
-
-export interface AuthenticationStoreGetter
-  extends GettersTree<AuthenticationStoreState> {}
-
-export interface AuthenticationStoreAction extends ActionsTree {
-  /**
-   * Login user.
-   * @description Check user credentials and set cookie.
-   */
-  login: (user: IUser) => void;
-  /**
-   * Logout current logged in user.
-   * @description Remove the cookie
-   */
-  logout: () => void;
-  /**
-   * Register new user.
-   * @description Add new user and set the cookie
-   */
-  register: (user: IUser) => void;
-}
+import {
+  IAuthenticationStoreState,
+  IAuthenticationStoreGetter,
+  IAuthenticationStoreAction,
+} from "@/types";
 
 /**
  * `Authentication` store is used to manage users authentication.
  */
-export const useAuthenticationStore = defineStore<
+export default defineStore<
   string,
-  AuthenticationStoreState,
-  AuthenticationStoreGetter,
-  AuthenticationStoreAction
+  IAuthenticationStoreState,
+  IAuthenticationStoreGetter,
+  IAuthenticationStoreAction
 >("authentication", {
   state() {
     return {
@@ -56,7 +34,7 @@ export const useAuthenticationStore = defineStore<
     };
   },
   actions: {
-    login(user: IUser) {
+    login(user) {
       const userFromCookie = getUserFromCookie("access_token");
       const _user = this.users.find(
         (u) => u.username === user.username && u.password === user.password
@@ -72,7 +50,7 @@ export const useAuthenticationStore = defineStore<
     logout() {
       removeCookie("access_token");
     },
-    register(user: IUser) {
+    register(user) {
       const userFromCookie = getUserFromCookie("access_token");
       // check user is already registered or not.
       const _user = this.users.find(

@@ -13,7 +13,7 @@
   // }
 
   // Input v-model value variables
-  const userInput = reactive<IUser>({ username: "demo", password: "demo" });
+  const userInput = reactive<IUser>({ username: "", password: "" });
 
   function login(user: IUser): void {
     store.login(user);
@@ -34,10 +34,13 @@
 <template>
   <main class="authentication-layout">
     <form @submit.prevent="login(userInput)">
+      <nuxt-link to="/">
+        <h1 class="font-brand">kittini</h1>
+      </nuxt-link>
       <h3>Oturum Aç</h3>
       <p>
         Hesabın yok mu?
-        <nuxt-link to="/register">hemen kayıt ol</nuxt-link>
+        <nuxt-link to="/register" class="link">Hemen kayıt ol</nuxt-link>
       </p>
       <input
         v-model="userInput.username"
@@ -51,13 +54,7 @@
         autocomplete="password"
         name="password"
       />
-      <input type="submit" value="Login" />
+      <input type="submit" value="Oturum Aç" />
     </form>
   </main>
 </template>
-
-<style lang="postcss" scoped>
-  main {
-    background-image: url(http://localhost:3000/_ipx/authentication/kitten-login.jpg?w=1080&fit=cover);
-  }
-</style>

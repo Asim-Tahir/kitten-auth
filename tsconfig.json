@@ -14,20 +14,22 @@
     "emitDecoratorMetadata": true,
     "baseUrl": ".",
     "paths": {
-      "~/*": ["./*"],
-      "@/*": ["./*"]
+      "@/*": ["./*"],
+      "~/*": ["./*"]
     },
     "types": [
       "node",
       "@nuxt/types",
       "@nuxtjs/axios",
+      "@nuxtjs/toast",
       "@nuxt/content",
       "@nuxt/image",
       "@pinia/nuxt",
       "unplugin-vue2-script-setup/types",
       "unplugin-vue2-script-setup/ref-macros",
       "jest"
-    ]
+    ],
+    "typeRoots": ["node_modules/@types/", "types/"]
   },
   "exclude": ["node_modules", ".nuxt", "dist"]
 }

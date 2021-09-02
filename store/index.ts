@@ -1,2 +1,2 @@
-export * from "./authentication";
-// export * from "./kitten";
+export { default as useAuthenticationStore } from "./authentication";
+export { default as useKittenStore } from "./kitten";

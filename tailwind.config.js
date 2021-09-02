@@ -4,12 +4,17 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        copper: "#B36D30",
-        "totem-pole": "#982B07",
-        cameo: "#CA9D79",
-        "golden-sand": "#F4CD84",
-        rebel: "#370B06",
-        silk: "#C2A8A8",
+        primary: {
+          100: "#F8F9FA",
+          200: "#DEE2E6",
+          300: "#CED4DA",
+          400: "#ADB5BD",
+          500: "#6C757D",
+          600: "#495057",
+          700: "#343A40",
+          800: "#212529",
+          900: "#16191B",
+        },
         white: "#f7f7f7",
         black: "#1D1D1B",
       },
@@ -18,7 +23,8 @@ module.exports = {
       },
     },
     fontFamily: {
-      sans: ["Raleway", "system-ui", "sans-serif"],
+      sans: ["Raleway", "sans-serif"],
+      brand: ["Clicker Script", "cursive"],
     },
   },
   plugins: [require("@tailwindcss/typography")()],

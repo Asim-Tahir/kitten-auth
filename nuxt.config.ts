@@ -1,4 +1,5 @@
-import type { NuxtConfig } from "@nuxt/types";
+import type { Configuration, NuxtConfig } from "@nuxt/types";
+import type { VueViteOptions } from "vite-plugin-vue2";
 
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
@@ -9,7 +10,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: "Kitten Authentication",
+    title: "kittini 🐈 • Sadece Kediler",
     htmlAttrs: {
       lang: "tr",
     },
@@ -19,11 +20,11 @@ export default {
       { hid: "description", name: "description", content: "" },
       { name: "format-detection", content: "telephone=no" },
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
+    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.svg" }],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [],
+  css: ["animate.css/animate.min.css"],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [],
@@ -33,14 +34,13 @@ export default {
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
-    // https://go.nuxtjs.dev/typescript
-    // "@nuxt/typescript-build",
+    // https://typescript.nuxtjs.org/
     ["@nuxt/typescript-build", { typeCheck: false }],
 
     // https://go.nuxtjs.dev/stylelint
     "@nuxtjs/stylelint-module",
 
-    // https://go.nuxtjs.dev/tailwindcss
+    // https://tailwindcss.nuxtjs.org/
     "@nuxtjs/tailwindcss",
 
     // https://vite.nuxtjs.org/
@@ -67,15 +67,6 @@ export default {
       },
     ],
   ],
-  vite: {
-    /* options for vite */
-    build: true,
-    // ssr: true // enable unstable server-side rendering for development (false by default)
-    experimentWarning: false, // hide experimental warning message (disabled by default for tests)
-    vue: {
-      /* options for vite-plugin-vue2 */
-    },
-  },
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
@@ -90,23 +81,42 @@ export default {
     "@nuxt/content",
 
     // https://github.com/nuxt-community/proxy-module
-    [
-      "@nuxtjs/proxy",
-      {
-        "^/api/": {
-          target: process.env.VITE_THECAT_API_URL,
-          changeOrigin: true,
-          autoRewrite: true,
-        },
-      },
-    ],
-
-    // https://google-fonts.nuxtjs.org/
-    "@nuxtjs/google-fonts",
+    "@nuxtjs/proxy",
   ],
 
+  vite: {
+    build: true,
+    plugins: [],
+    // ssr: true // enable unstable server-side rendering for development (false by default)
+    experimentWarning: false, // hide experimental warning message (disabled by default for tests)
+    vue: {
+      /* options for vite-plugin-vue2 */
+    } as VueViteOptions,
+  },
+
+  privateRuntimeConfig: {
+    apiKey: process.env.KITTEN_API_KEY || "DEMO-API-KEY",
+  },
+
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
+  axios: {
+    baseURL: "/api",
+
+    // headers: {
+    //   get: {
+    //     "x-api-key": process.env.KITTEN_API_KEY || "DEMO-API-KEY",
+    //   },
+    // },
+  },
+
+  proxy: {
+    "/api": {
+      target: process.env.KITTEN_API_BASE_URL || "https://api.thecatapi.com/v1",
+      changeOrigin: true,
+      autoRewrite: true,
+      pathRewrite: (path: string) => path.replace(/^\/api/, ""),
+    },
+  },
 
   content: {},
 
@@ -128,21 +138,13 @@ export default {
     },
   },
 
-  googleFonts: {
-    families: {
-      Raleway: [200, 300, 400, 500, 600, 700, 800, 900],
-    },
-    display: "swap",
-    subsets: ["latin-ext"],
-    useStylesheet: false,
-  },
-
   image: {
     // Generate images to `/_nuxt/image/file.png`
     staticFilename: "[publicPath]/images/[name]-[hash][ext]",
-    dir: "assets/images",
-    imgix: {
-      baseURL: "https://assets.imgix.net",
+    dir: "static/images",
+    domains: ["https://cdn2.thecatapi.com"],
+    ipx: {
+      domains: ["https://cdn2.thecatapi.com"],
     },
   },
 
@@ -152,4 +154,4 @@ export default {
       plugins: { "postcss-nested": {}, "postcss-nested-ancestors": {} },
     },
   },
-} as NuxtConfig;
+} as NuxtConfig | Configuration;
